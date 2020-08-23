@@ -17,8 +17,6 @@
   <span>App created with the Svelte Framework. <br />Download Youtube videos for free and without ads.</span>
 </div>
 
-## 🔥 Test The App
-
 <h1> 🏹 Running </h1>
 <b>Make sure you have Node.js installed to run this app</b>
 
