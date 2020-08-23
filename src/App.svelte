@@ -46,7 +46,7 @@
 
 <style>
   .container {
-		padding: 20px;
+		padding: 19px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
