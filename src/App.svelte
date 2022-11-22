@@ -21,15 +21,16 @@
 		.then(json => {
 			const { videoDetails } = json;
 			const { author } = videoDetails;
-			const { avatar, name } = author;
+			const { name } = author;
 
-			const { thumbnail } = videoDetails;
-			const thumbnailUrl = thumbnail.thumbnails[0];
+			const { thumbnails } = videoDetails;
+
+			console.log(thumbnails)
+			const thumbnailUrl = thumbnails[3];
 			
 			const { title } = videoDetails;
 
 			data = {
-				avatar,
 				name,
 				thumbnailUrl,
 				title,
@@ -39,9 +40,14 @@
 		});
 	}
 
-	function download() {
-		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}`;
+	function download(videoTitle) {
+		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP4&NAME=${videoTitle}`;
 	}
+
+	function downloadMp3(videoTitle) {
+		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP3&NAME=${videoTitle}`;
+	}
+
 </script>
 
 <style>
@@ -164,7 +170,7 @@
 		color: #eee;
 	}
 
-	button#download {
+	button.download {
 		outline: 0;
 		width: 340px;
 		margin-top: 7px;
@@ -181,9 +187,13 @@
 		transition: all 0.5s;
 	}
 
-	button#download:hover {
+	button.download:hover {
 		box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
 		background: #654eb3;
+	}
+
+	button#download-mp3 {
+		background: rgb(170, 164, 3);
 	}
 </style>
 
@@ -201,7 +211,7 @@
 		<img src={data.thumbnailUrl.url} alt={data.title} class="thumbnail"/>
 		
 		<div class="content">
-			<img src={data.avatar} alt={data.name} class="avatar" />
+			<!-- <img src={data.user_url} alt={data.name} class="avatar" /> -->
 
 			<div class="info">
 				<h1>{data.title}</h1>
@@ -209,7 +219,8 @@
 			</div>
 		</div>
 	</div>
-	<button type="button" id="download" on:click="{download}">Download</button>
+	<button type="button" id="download" class="download" on:click="{download(data.title)}">MP4</button>
+	<button type="button" id="download-mp3" class="download" on:click="{downloadMp3(data.title)}">MP3</button>
 	{/if}
 </div>
 {/if}
