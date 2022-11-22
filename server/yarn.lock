@@ -1143,6 +1143,11 @@
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   "version" "1.1.2"
 
+"video-to-audio@^1.0.1":
+  "integrity" "sha512-6+h79x2kSO60PYTT2cXcgXIsqw/3X8a5qshsZanxH0cxbGUVxVllwQdNOWr/8ywDNcgGgecSmk8Q6TJ79gtFjQ=="
+  "resolved" "https://registry.npmjs.org/video-to-audio/-/video-to-audio-1.0.1.tgz"
+  "version" "1.0.1"
+
 "widest-line@^3.1.0":
   "integrity" "sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg=="
   "resolved" "https://registry.npmjs.org/widest-line/-/widest-line-3.1.0.tgz"

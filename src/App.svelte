@@ -40,12 +40,12 @@
 		});
 	}
 
-	function download() {
-		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP4`;
+	function download(videoTitle) {
+		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP4&NAME=${videoTitle}`;
 	}
 
-	function downloadMp3() {
-		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP3`;
+	function downloadMp3(videoTitle) {
+		window.location.href = `http://localhost:3333/download?URL=${youtubeUrl}&FORMAT=MP3&NAME=${videoTitle}`;
 	}
 
 </script>
@@ -219,8 +219,8 @@
 			</div>
 		</div>
 	</div>
-	<button type="button" id="download" class="download" on:click="{download}">MP4</button>
-	<button type="button" id="download-mp3" class="download" on:click="{downloadMp3}">MP3</button>
+	<button type="button" id="download" class="download" on:click="{download(data.title)}">MP4</button>
+	<button type="button" id="download-mp3" class="download" on:click="{downloadMp3(data.title)}">MP3</button>
 	{/if}
 </div>
 {/if}
