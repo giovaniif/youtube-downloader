@@ -15,7 +15,7 @@ const downloadMp3 = async (request, response) => {
 }
 
 app.get("/info", async (request, response) => {
-  const URL = request.query.URL;
+  const URL = request.query.URL; 
   const videoInfo = await ytdl.getInfo(URL);
   return response.json(videoInfo);
 });
@@ -23,7 +23,7 @@ app.get("/info", async (request, response) => {
 app.get("/download", (request, response) => {
   const fileFormat = request.query.FORMAT; 
   const videoName = request.query.NAME;
-  const filename = `${videoName}.${fileFormat}`;
+  const filename = `${videoName}.${fileFormat.toLowerCase()}`;
   response.header("Content-Disposition", `attachment; filename=${filename}`);
   fileFormat === "MP3" ? downloadMp3(request, response) : downloadMp4(request, response);
 });
