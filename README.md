@@ -1,6 +1,7 @@
 <div align="center">
   <img src="https://ik.imagekit.io/giovaniif/logo_mTi0tJPde.png" height="180" />
   <h1>Youtube Video Downloader
+  <span>By Giovani And Caio</span>
   </h1>
 </div>
 
